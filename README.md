@@ -8,13 +8,13 @@ The Google Apps Script fetches metrics data from various NMDC HTTP APIs; then it
 
 ```mermaid
 graph LR
-    participant API as "HTTP API"
-    participant Script as "Google Apps Script<br>script"
-    participant Sheets as "Google Sheets<br>document"
+  API["HTTP<br>API"]
+  Script["Google Apps Script<br>script"]
+  Sheets["Google Sheets<br>document"]
 
-    Script -->|Request data|  API
-    API    -.->|Receive data| Script
-    Script -->|Store data|    Sheets
+  Script -- "Request<br>data" --> API
+  API    -. "Receive<br>data" .-> Script
+  Script -- "Store<br>data" -->   Sheets
 ```
 
 ## Setup
