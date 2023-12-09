@@ -49,7 +49,7 @@ Here's how you can set up the tool:
      | --- | --- | --- |
 1. Copy the URL of the spreadsheet for use in a later step.
 
-At this point, the Google Sheet document (i.e. spreadsheet) is set up. In the next section, you'll set up the Google Apps Script that will eventually write to that Google Sheets document.
+At this point, the Google Sheet document (i.e. spreadsheet) is set up. In the next section, you'll set up the Google Apps Script project containing the script that will eventually write to that Google Sheets document.
 
 #### 2. Set up the Google Apps Script project.
 
@@ -68,7 +68,7 @@ At this point, the Google Sheet document (i.e. spreadsheet) is set up. In the ne
    ```
 1. Click the disk icon to save the project.
 
-At this point, the Google Apps Script project is set up—except for one thing: you haven't scheduled the script to run at any particular time. You'll do that in the next section.
+At this point, the Google Apps Script project is set up—except for one thing: you haven't scheduled any of the scripts in the project to run at any particular time. You'll do that in the next section.
 
 #### 3. Add a Time-based Trigger.
 
@@ -85,4 +85,4 @@ At this point, the Google Apps Script project is set up—except for one thing: 
 1. If prompted, follow the prompts to authorize the Google Apps Script script to access the Google Sheets document.
 1. Verify the "Triggers" page lists the newly-created trigger.
 
-That's it! Google Apps Script is now configured to run the script once a day.
+That's it! Google Apps Script is now configured to run the `main` function in the `Code.gs` script once a day.
