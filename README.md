@@ -49,6 +49,8 @@ Here's how you can set up the tool:
      | --- | --- | --- |
 1. Copy the URL of the spreadsheet for use in a later step.
 
+At this point, the Google Sheet document (i.e. spreadsheet) is set up. In the next section, you'll set up the Google Apps Script that will eventually write to that Google Sheets document.
+
 #### 2. Set up the Google Apps Script project.
 
 1. Visit https://script.google.com/home/projects/create to create a new Google Apps Script project.
@@ -66,6 +68,21 @@ Here's how you can set up the tool:
    ```
 1. Click the disk icon to save the project.
 
+At this point, the Google Apps Script project is set up—except for one thing: you haven't scheduled the script to run at any particular time. You'll do that in the next section.
+
 #### 3. Add a Time-based Trigger.
 
-- TODO. This will involve adding a Trigger and granting the Google Apps Script script access to the Google Sheets document.
+1. In the Google Apps Script editor, in the project-level sidebar (to the left of the "Files", "Libraries", and "Services" sidebar), click the "Triggers" link.
+1. On the "Triggers" page, click the "Add Trigger" button in the lower right.
+1. In the "Add Trigger..." modal window that appears, configure the trigger as shown here:
+  1. Choose which function to run: `main`
+  1. Choose which deployment should run: `Head` (default)
+  1. Select event source: `Time-driven` (default)
+  1. Select type of time based trigger: `Day timer`
+  1. Select time of day: `Midnight to 1am` (or whatever time of day you want)
+  1. Failure notification settings: `Notify my daily` (or whatever frequency you want)
+1. Click the "Save" button to create the trigger.
+1. If prompted, follow the prompts to authorize the Google Apps Script script to access the Google Sheets document.
+1. Verify the "Triggers" page lists the newly-created trigger.
+
+That's it! Google Apps Script is now configured to run the script once a day.
