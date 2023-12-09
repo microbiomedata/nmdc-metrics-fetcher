@@ -14,7 +14,7 @@ graph LR
 
   Script -- "Request<br>data" --> API
   API    -. "Receive<br>data" .-> Script
-  Script -- "Store<br>data" -->   Sheets
+  Script -- "Store<br>data"   --> Sheets
 ```
 
 ## Setup
@@ -29,12 +29,30 @@ Here's how you can set up the tool:
 
 #### 1. Set up the Google Sheets document.
 
-- TODO. This will involve creating the necessary tabs and columns in the Google Sheets document.
+1. In your web browser, visit Google Sheets at https://sheets.google.com.
+1. Click the `+` thumbnail to create a new Blank spreadsheet.
+1. Rename the spreadsheet to "`nmdc-metrics-fetcher-data`" (or any other name you want).
+1. On the spreadsheet, create tabs (i.e. sheets) having the following names:
+   1. `data.NMDC_DATA_PORTAL_STATS`
+   1. `data.NMDC_RUNTIME_STATS`
+   1. `data.NMDC_EDGE_STATS`
+   > You can rename the default `Sheet1` tab to one of those if you'd like; or leave it alone and create all new tabs.
+1. On the `data.NMDC_DATA_PORTAL_STATS` tab, populate Row 1 (i.e. the header cells) with the following values:
+   | timestamp | studies | locations | habitats | data_size | metagenomes | metatranscriptomes | proteomics | metabolomics | lipodomics | organic_matter_characterization |
+   | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+1. On the `data.NMDC_RUNTIME_STATS` tab, populate Row 1 (i.e. the header cells) with the following values:
+   | timestamp | omics_processing_set_count | biosample_set_count | nom_analysis_activity_set_count | collecting_biosamples_from_site_set_count | mags_activity_set_count | library_preparation_set_count | metaproteomics_analysis_activity_set_count | metagenome_sequencing_activity_set_count | metagenome_annotation_activity_set_count | material_sample_set_count | activity_set_count | read_qc_analysis_activity_set_count | field_research_site_set_count | functional_annotation_agg_count | read_based_taxonomy_analysis_activity_set_count | pooling_set_count | processed_sample_set_count | metagenome_assembly_set_count | extraction_set_count | metatranscriptome_activity_set_count | metabolomics_analysis_activity_set_count | study_set_count | data_object_set_count |
+   | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+   > Since that can make the row appear quite wide; I recommend (in Google Sheets) selecting the header cells, then clicking `Format > Rotation > Rotate up` in order to rotate them 90 degrees counter-clockwise.
+1. On the `data.NMDC_EDGE_STATS` tab, populate Row 1 (i.e. the header cells) with the following values:
+   | timestamp | num_projects | num_users |
+   | --- | --- | --- |
+1. Copy the URL of the spreadsheet for use in a later step.
 
 #### 2. Set up the Google Apps Script project.
 
 1. Visit https://script.google.com/home/projects/create to create a new Google Apps Script project.
-1. In the Google Apps Script editor that appears, rename the project to "`nmdc-metrics-fetcher`".
+1. In the Google Apps Script editor that appears, rename the project to "`nmdc-metrics-fetcher`" (or any other name you want).
     - You can do that by clicking on "Untitled project" at the top of the page.
 1. In the editor, create a new script file named "`Config`".
     - In the "Files" section in the sidebar, click the `+` icon and select `Script`.
