@@ -75,12 +75,12 @@ At this point, the Google Apps Script project is set up—except for one thing: 
 1. In the Google Apps Script editor, in the project-level sidebar (to the left of the "Files", "Libraries", and "Services" sidebar), click the "Triggers" link.
 1. On the "Triggers" page, click the "Add Trigger" button in the lower right.
 1. In the "Add Trigger..." modal window that appears, configure the trigger as shown here:
-  1. Choose which function to run: `main`
-  1. Choose which deployment should run: `Head` (default)
-  1. Select event source: `Time-driven` (default)
-  1. Select type of time based trigger: `Day timer`
-  1. Select time of day: `Midnight to 1am` (or whatever time of day you want)
-  1. Failure notification settings: `Notify my daily` (or whatever frequency you want)
+   1. Choose which function to run: `main`
+   1. Choose which deployment should run: `Head` (default)
+   1. Select event source: `Time-driven` (default)
+   1. Select type of time based trigger: `Day timer`
+   1. Select time of day: `Midnight to 1am` (or whatever time of day you want)
+   1. Failure notification settings: `Notify my daily` (or whatever frequency you want)
 1. Click the "Save" button to create the trigger.
 1. If prompted, follow the prompts to authorize the Google Apps Script script to access the Google Sheets document.
 1. Verify the "Triggers" page lists the newly-created trigger.
