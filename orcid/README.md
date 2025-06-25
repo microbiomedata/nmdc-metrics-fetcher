@@ -2,7 +2,9 @@
 
 This directory contains miscellaneous scripts you can use to fetch data about NMDC's use of ORCID.
 
-## `analyze_affiliations.py`: Analyze raw affiliation data exported from ORCID Member Portal
+## Analyze affiliation data exported from ORCID Member Portal
+
+File: `analyze_affiliations.py`
 
 This script can be used to parse a "raw data" CSV file exported from the ORCID Member Portal. The script counts the number of "Records" (i.e. ORCIDs) that are associated with US National Labs, and the number of "Records" that are _not_ associated with US National Labs.
 
@@ -10,7 +12,9 @@ This script can be used to parse a "raw data" CSV file exported from the ORCID M
 
 - Update the file path in `csv_file` (near the bottom of the script), so that it points to the input file.
 
-## `nmdc-orcid-info.ipynb`: Fetch and analyze user organization data from ORCID Member API
+## Fetch and analyze user organization data from ORCID Member API
+
+File: `nmdc-orcid-info.ipynb`
 
 ### Prerequisites
 
