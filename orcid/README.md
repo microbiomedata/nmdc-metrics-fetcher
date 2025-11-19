@@ -8,9 +8,20 @@ File: `analyze_affiliations.py`
 
 This script can be used to parse a "raw data" CSV file exported from the ORCID Member Portal. The script counts the number of "Records" (i.e. ORCIDs) that are associated with US National Labs, and the number of "Records" that are _not_ associated with US National Labs.
 
+## Usage:
+```sh
+python analyze_affiliations.py filename.csv
+```
+
 ### Prerequisites
 
-- Update the file path in `csv_file` (near the bottom of the script), so that it points to the input file.
+Downloaded CSV file from ORCID member page:
+  - You can get this via https://member-portal.orcid.org/en/report/integration 
+  - Filter for "Integration Name" is "National Microbiome Data Collaborative (NMDC)"
+  - Go to "Current affiliations" -> "..." -> "Export" -> "CSV (Raw Data)"
+
+
+
 
 ## Fetch and analyze user organization data from ORCID Member API
 
