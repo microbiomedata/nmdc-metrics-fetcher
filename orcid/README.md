@@ -9,7 +9,7 @@ File: `analyze_affiliations.py`
 This script can be used to parse a "raw data" CSV file exported from the ORCID Member Portal. The script counts the number of "Records" (i.e. ORCIDs) that are associated with US National Labs, and the number of "Records" that are _not_ associated with US National Labs.
 
 ## Usage:
-```
+```sh
 python analyze_affiliations.py filename.csv
 ```
 
