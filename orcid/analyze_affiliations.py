@@ -11,7 +11,7 @@ import re
 import sys
 
 # Default CSV file path
-DEFAULT_CSV_PATH = "/Users/shreyas/Downloads/nmdc-nl-metrics/20250625-orcid-member-nmdc_data-and-sub-portal-prod_current-affiliations-raw-data.csv"
+DEFAULT_CSV_PATH = "Current_Affiliations.csv"
 
 def analyze_affiliations(csv_file_path):
     """Analyze the affiliations CSV file."""
