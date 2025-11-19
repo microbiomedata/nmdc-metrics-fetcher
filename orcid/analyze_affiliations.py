@@ -8,6 +8,10 @@ Analyze CSV file of institutional affiliations to:
 
 import csv
 import re
+import sys
+
+# Default CSV file path
+DEFAULT_CSV_PATH = "Current_Affiliations.csv"
 
 def analyze_affiliations(csv_file_path):
     """Analyze the affiliations CSV file."""
@@ -24,7 +28,6 @@ def analyze_affiliations(csv_file_path):
         r'national renewable energy laboratory',
         r'sandia national laboratories',
         r'environmental molecular sciences laboratory',
-        #r'national laboratory of health, environment and food',  # this is not a DOE National Lab
         r'joint genome institute',
         r'doe joint genome institute',
         r'national microbiome data collaborative'
@@ -98,6 +101,11 @@ def analyze_affiliations(csv_file_path):
     print(f"• Remaining {non_national_lab_records:,} records are from non-national lab institutions")
 
 if __name__ == "__main__":
-    # TODO: Make this file path be provide-able via a CLI argument.
-    csv_file = "/path/to/20250625-orcid-member-nmdc_data-and-sub-portal-prod_current-affiliations-raw-data.csv"
+    # Use command-line argument if provided, otherwise use default path
+    if len(sys.argv) > 1:
+        csv_file = sys.argv[1]
+    else:
+        csv_file = DEFAULT_CSV_PATH
+    
+    print(f"Analyzing CSV file: {csv_file}\n")
     analyze_affiliations(csv_file)
